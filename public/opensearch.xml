@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>FOKINA</ShortName>
+  <Description>Трекер воды для здоровья - отслеживай потребление воды каждый день</Description>
+  <Url type="text/html" template="https://fokina.app/search?q={searchTerms}"/>
+  <Url type="application/x-suggestions+json" template="https://fokina.app/api/suggestions?q={searchTerms}"/>
+  <Image height="16" width="16" type="image/x-icon">https://fokina.app/favicon.ico</Image>
+  <Contact>support@fokina.app</Contact>
+  <Tags>вода здоровье гидратация трекер</Tags>
+  <LongName>FOKINA - Трекер воды для здоровья</LongName>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+</OpenSearchDescription>

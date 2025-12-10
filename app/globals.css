@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated color scheme for FOKINA app */
+:root {
+  --background: #9aabb8;
+  --foreground: #1e2a38;
+  --card: #ffffff;
+  --card-foreground: #1e2a38;
+  --popover: #ffffff;
+  --popover-foreground: #1e2a38;
+  --primary: #1e2a38;
+  --primary-foreground: #ffffff;
+  --secondary: #c4e538;
+  --secondary-foreground: #1e2a38;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --accent: #c4e538;
+  --accent-foreground: #1e2a38;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #c4e538;
+  --chart-1: #c4e538;
+  --chart-2: #1e2a38;
+  --chart-3: #9aabb8;
+  --chart-4: #7dd3fc;
+  --chart-5: #0ea5e9;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1e2a38;
+  --sidebar-primary: #1e2a38;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #c4e538;
+  --sidebar-accent-foreground: #1e2a38;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #c4e538;
+}
+
+.dark {
+  --background: #1e2a38;
+  --foreground: #ffffff;
+  --card: #2a3a4a;
+  --card-foreground: #ffffff;
+  --popover: #2a3a4a;
+  --popover-foreground: #ffffff;
+  --primary: #c4e538;
+  --primary-foreground: #1e2a38;
+  --secondary: #3a4a5a;
+  --secondary-foreground: #ffffff;
+  --muted: #3a4a5a;
+  --muted-foreground: #94a3b8;
+  --accent: #c4e538;
+  --accent-foreground: #1e2a38;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: #ffffff;
+  --border: #3a4a5a;
+  --input: #3a4a5a;
+  --ring: #c4e538;
+  --chart-1: #c4e538;
+  --chart-2: #7dd3fc;
+  --chart-3: #9aabb8;
+  --chart-4: #f472b6;
+  --chart-5: #a78bfa;
+  --sidebar: #2a3a4a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #c4e538;
+  --sidebar-primary-foreground: #1e2a38;
+  --sidebar-accent: #3a4a5a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3a4a5a;
+  --sidebar-ring: #c4e538;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4e538;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8c92f;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation for water fill */
+@keyframes waterWave {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-2px);
+  }
+}
+
+.animate-water-wave {
+  animation: waterWave 2s ease-in-out infinite;
+}

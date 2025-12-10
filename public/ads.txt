@@ -1,0 +1,5 @@
+# ads.txt file for FOKINA
+# This file contains information about authorized digital sellers for FOKINA
+
+# Example format (replace with actual values if monetizing):
+# google.com, pub-xxxxxxxxxxxxxxxx, DIRECT, f08c47fec0942fa0
