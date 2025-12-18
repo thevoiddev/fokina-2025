@@ -1,8 +1,4 @@
-'use client'
- 
-import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { Suspense } from 'react';
+
 import React, { JSX } from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -93,18 +89,7 @@ export const viewport: Viewport = {
 }
 
 
-export default function YandexMetrika() {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
- 
-  useEffect(() => {
-    const url = `${pathname}?${searchParams}`
-    ym(XXXXXXXX, 'hit', url);
- 
-  }, [pathname, searchParams])
- 
-  return null
-}
+
 
 export default function RootLayout({
   children,
