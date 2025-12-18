@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#9AABB8]">
+      <meta name="yandex-verification" content="6427e67295d825dc" />
       <Header />
       <HeroSection />
       <FeaturesSection />
