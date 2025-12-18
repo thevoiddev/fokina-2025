@@ -1,4 +1,5 @@
-
+import { Suspense } from 'react';
+import Metrica from "./Metrica"
 import React, { JSX } from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -129,7 +130,7 @@ export default function RootLayout({
             }
           </Script>
         <Suspense fallback={<></>}>
-            <YandexMetrika />
+            <Metrica />
           </Suspense>
       </body>
     </html>
