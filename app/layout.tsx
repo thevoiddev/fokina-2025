@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Metrica from "./Metrica"
+import NativeYandexMetrika from "./NativeYandexMetrika"
 import React, { JSX } from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -111,9 +111,18 @@ export default function RootLayout({
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="FOKINA" />
       </head>
       <body className="font-sans antialiased">
+        <Script
+          id="yandex-metrika-loader"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+               (function(m,e,t,r,i,k,a){         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};         m[i].l=1*new Date();         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105913970', 'ym');      ym(105913970, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true}); 
+        `,
+          }}
+        />
         <AuthProvider>{children}</AuthProvider>
         <Analytics />
-        <Metrica />
+
       </body>
     </html>
   )
