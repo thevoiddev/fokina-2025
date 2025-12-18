@@ -1,19 +1,33 @@
-'use client'
- 
-import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+"use client";
 
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import ym, { YMInitializer } from "react-yandex-metrika";
 
-export default function YandexMetrika() {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
- 
+const YM_COUNTER_ID = 105913970; 
+
+const YandexMetrika = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const url = `${pathname}?${searchParams}`
-    // @ts-ignore
-    ym(105913970, 'hit', url);
- 
-  }, [pathname, searchParams])
- 
-  return null
-}
+    if (pathname) {
+      ym("hit", pathname);
+    }
+  }, [pathname]);
+
+  return (
+    <YMInitializer
+      accounts={[YM_COUNTER_ID]}
+      options={{
+        defer: true,
+        webvisor: true,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      }}
+      version="2"
+    />
+  );
+};
+
+export default YandexMetrika;
