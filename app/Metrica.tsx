@@ -11,7 +11,7 @@ export default function YandexMetrika() {
   useEffect(() => {
     const url = `${pathname}?${searchParams}`
     // @ts-ignore
-    ym(XXXXXXXX, 'hit', url);
+    ym(105913970, 'hit', url);
  
   }, [pathname, searchParams])
  
